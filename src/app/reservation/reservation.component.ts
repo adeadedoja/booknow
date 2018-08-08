@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-reservation',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor() { }
+  reservations: any;
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getReservations().subscribe( (res) => {
+      console.log(res);
+      this.reservations = res;
+    }, err => {
+      console.log(err);
+    })
   }
 
 }

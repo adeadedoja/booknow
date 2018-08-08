@@ -7,6 +7,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationDetailComponent } from './reservation-detail/reservation-detail.component';
 import { ReservationCreateComponent } from './reservation-create/reservation-create.component';
 import { ReservationEditComponent } from './reservation-edit/reservation-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   {
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     ReservationEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
