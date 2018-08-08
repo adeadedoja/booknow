@@ -1,4 +1,5 @@
 <h1>a{{title}}</h1>
+<a [routerLink]="['/reservation-create']">add</a>
 <ul class="">
   <li *ngFor="let reservation of reservations">
     <span class="badge">{{reservation.name}}</span> {{reservation.class}} - <a [routerLink]="['/reservation-details/', reservation._id]">View Reservation</a>

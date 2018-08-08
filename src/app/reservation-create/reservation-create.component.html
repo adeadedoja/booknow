@@ -1,3 +1,18 @@
 <p>
   reservation-create works!
 </p>
+<form [formGroup]="reservationForm" (ngSubmit)="onFormSubmit(reservationForm.value)">
+  <input type="text" class="form-control" formControlName="name" #name />
+          <div *ngIf="reservationForm.controls['name'].invalid && (reservationForm.controls['name'].dirty || reservationForm.controls['name'].touched)" class="alert alert-danger">
+            <div *ngIf="reservationForm.controls['name'].errors.required">
+              Name is required.
+            </div>
+          </div>
+<input type="text" class="form-control" formControlName="departure_city" #departure_city />
+<input type="text" class="form-control" formControlName="arrival_city" #arrival_city />
+<input type="text" class="form-control" formControlName="departure_date" #departure_date />
+<input type="text" class="form-control" formControlName="return_date" #return_date />
+<input type="text" class="form-control" formControlName="class" #class />
+<input type="text" class="form-control" formControlName="seat" #seat />
+<input type="submit" value="submit" />
+</form>
