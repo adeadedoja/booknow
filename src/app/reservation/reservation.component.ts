@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reservation',
@@ -9,13 +10,14 @@ import { ApiService } from '../api.service';
 export class ReservationComponent implements OnInit {
 
   reservations: any;
-
+  title = 'Tour of Heroes';
+  
   constructor(private api: ApiService) { }
 
   ngOnInit() {
     this.api.getReservations().subscribe( (res) => {
-      console.log(res);
       this.reservations = res;
+      console.log(this.reservations);
     }, err => {
       console.log(err);
     })

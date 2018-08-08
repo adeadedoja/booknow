@@ -1,3 +1,6 @@
-<p>
-  reservation works!
-</p>
+<h1>a{{title}}</h1>
+<ul class="">
+  <li *ngFor="let reservation of reservations">
+    <span class="badge">{{reservation.name}}</span> {{reservation.class}} - <a [routerLink]="['/reservation-details/', reservation._id]">View Reservation</a>
+  </li>
+</ul>
