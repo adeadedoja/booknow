@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 let appname = 'booknow';
 var apiRouter = require('./routes/reservation');
+var mongoose = require('mongoose');
 
 var app = express();
 
@@ -30,5 +31,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.send(err.status);
 });
+
+//mongoose
+mongoose.connect('mongodb://localhost/mean-angular6', { promiseLibrary: require('bluebird') })
+    .then(() => console.log('connection successful'))
+    .catch((err) => console.error(err));
+
 
 module.exports = app;
