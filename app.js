@@ -33,7 +33,7 @@ app.use(function(err, req, res, next) {
 });
 
 //mongoose
-mongoose.connect('mongodb://localhost:27017/travel', { promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb://dami:damidami1@ds125602.mlab.com:25602/dami_mean_test', { promiseLibrary: require('bluebird') })
     .then(() => console.log('connection successful'))
     .catch((err) => console.error(err));
 
