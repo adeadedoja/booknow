@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'dist/'+appname)));
 app.use('/', express.static(path.join(__dirname, 'dist/'+appname)));
 app.use('/api', apiRouter);
 
-// catch 404 and forward to error handleraa
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
@@ -29,7 +29,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.send(err.status);
+  res.sendStatus(err.status);
 });
 
 //mongoose
