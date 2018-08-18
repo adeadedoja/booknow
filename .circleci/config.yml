@@ -35,4 +35,5 @@ jobs:
         
       # run tests!
       - run: yarn test
+        no_output_timeout: 12000
 
