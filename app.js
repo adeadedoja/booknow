@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'dist/'+appname)));
 app.use('/', express.static(path.join(__dirname, 'dist/'+appname)));
 app.use('/api', apiRouter);
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handleraa
 app.use(function(req, res, next) {
   next(createError(404));
 });
