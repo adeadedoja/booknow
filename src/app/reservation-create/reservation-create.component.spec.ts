@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ReservationCreateComponent } from './reservation-create.component';
 
@@ -8,6 +11,7 @@ describe('ReservationCreateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule, FormsModule, RouterTestingModule, HttpClientTestingModule],
       declarations: [ ReservationCreateComponent ]
     })
     .compileComponents();
