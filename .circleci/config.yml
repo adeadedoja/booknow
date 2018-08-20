@@ -40,19 +40,9 @@ jobs:
           docker_layer_caching: true # (3)
 
       - run:
-          name: Build Docker Image
-          command: docker build -t damdey/booknow:$CIRCLE_SHA1 .
-
-      - run:
-          name: Push to Dockerhub
-          command: |
-            docker login -u damdey -p Kaos1991
-            docker push damdey/booknow:$CIRCLE_SHA1
-
-      - run:
           name: Deploy to Heroku
           command: |
-            docker login --username=damdey@yahoo.com --password=d4b04f55-c7ee-484e-ba5f-768c5b5b6672 registry.heroku.com
-            docker tag damdey/booknow:$CIRCLE_SHA1 registry.heroku.com/dami-container/web
-            docker push registry.heroku.com/dami-container/web
+            git push https://heroku:d4b04f55-c7ee-484e-ba5f-768c5b5b6672@git.heroku.com/dami-container.git master
+
+    
 
