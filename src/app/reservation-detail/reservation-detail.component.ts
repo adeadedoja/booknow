@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 })
 export class ReservationDetailComponent implements OnInit {
 
-  reservation: {}
+  reservation: {"name": "",}
   title = 'Bawo ni Padi mi';
 
   constructor(private api: ApiService, private route: ActivatedRoute  ) { }
