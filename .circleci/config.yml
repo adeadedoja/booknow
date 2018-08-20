@@ -56,10 +56,10 @@ jobs:
             docker tag damdey/booknow:$CIRCLE_SHA1 registry.heroku.com/$HEROKU_APP_NAME/web
             docker push registry.heroku.com/$HEROKU_APP_WEB/web
 
-     # release the image
-     - run: |
-         heroku -v
-         heroku update
-         heroku container:release web -a $HEROKU_APP_NAME
+      # release the image
+      - run: |
+          heroku -v
+          heroku update
+          heroku container:release web -a $HEROKU_APP_NAME
 
 
