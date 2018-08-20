@@ -54,5 +54,5 @@ jobs:
           command: |
             docker login --username=damdey@yahoo.com --password=d4b04f55-c7ee-484e-ba5f-768c5b5b6672 registry.heroku.com
             docker tag damdey/booknow:$CIRCLE_SHA1 registry.heroku.com/dami-container/web
-            docker push registry.heroku.com/dami-container/web:latest
+            docker push registry.heroku.com/dami-container/web
 
