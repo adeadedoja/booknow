@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Push to Dockerhub
           command: |
-            docker login -u $DOCKERHUB_LOGIN -p DOCKERHUB_PASSWORD
+            docker login -u damdey -p Kaos1991
             docker push damdey/booknow:$CIRCLE_SHA1
 
       - run:
