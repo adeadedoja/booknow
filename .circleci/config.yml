@@ -55,5 +55,11 @@ jobs:
             docker login --username=$HEROKU_LOGIN --password=$HEROKU_API_KEY  registry.heroku.com
             docker tag damdey/booknow:$CIRCLE_SHA1 registry.heroku.com/$HEROKU_APP_NAME/web
             docker push registry.heroku.com/$HEROKU_APP_WEB/web
-            heroku container:release
+
+     # release the image
+     - run: |
+         heroku -v
+         heroku update
+         heroku container:release web -a $HEROKU_APP_NAME
+
 
